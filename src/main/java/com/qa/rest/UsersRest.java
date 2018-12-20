@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.business.service.UsersService;
 import com.qa.repository.domain.Users;
+import com.qa.repository.domain.UsersList;
 import com.qa.util.Constants;
 
 @RequestMapping(Constants.URL_BASE)
@@ -62,22 +63,5 @@ public class UsersRest {
     	return usersService.getPasswordByUsername(username);
     }
     
-	private static class UsersList {
-		private List<Users> allUsers;
-		
-	public List<Users> getAllUsers() {
-			return allUsers;
-		}
-
-		public void setAllUsers(List<Users> allUsers) {
-			this.allUsers = allUsers;
-		}
-
-	public UsersList() {
-		allUsers = new ArrayList<>(); 
-	}
-	
-		
-	}
 
 }
